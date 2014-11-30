@@ -1,7 +1,6 @@
 /* 
- * This script does the AJAX call to the PHP script
- * which returns the data for the drop-down, i.e. the 
- * option tags with data from the database table.
+ * This script does the AJAX call to the PHP script which returns the data for the drop-down, 
+ * i.e. the option tags with data from the database table.
  * 
  * Ref: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
  * 

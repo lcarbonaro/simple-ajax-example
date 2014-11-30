@@ -22,13 +22,14 @@ if ( !$sqlResult ) {
     exit('MySQL Error: ' . mysqli_error($dbConn) . 'SQL: ' . $sqlStatement);
 }
 
-// 3. prepare the data for presentation i.e. format values as HTML option tags
+// 3. prepare the data for presentation 
+// i.e. format the values from the query result as HTML option tags
 $options = '';
 while ( $row = mysqli_fetch_assoc($sqlResult) ) {
     $options .= '<option value="'.$row['id'].'">'.$row['method_name'].'</option>';
 }
 
-// 4. return prepared data
+// 4. return the formatted data
 echo($options);
 
 /*
@@ -38,6 +39,7 @@ CREATE TABLE `paymethod` (
   `method_name` varchar(25),
   PRIMARY KEY (`id`)
 );
+-- With records something like:
 INSERT INTO `paymethod` (`id`, `method_name`) VALUES
 (1, 'Credit Card'),
 (2, 'Debit Card'),
