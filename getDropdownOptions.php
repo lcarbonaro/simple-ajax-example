@@ -33,21 +33,18 @@ while ( $row = mysqli_fetch_assoc($sqlResult) ) {
 echo($options);
 
 /*
-
 -- The code shown above assumes this table structure:
 CREATE TABLE `paymethod` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `method_name` varchar(25),
   PRIMARY KEY (`id`)
 );
-
 -- With records something like:
 INSERT INTO `paymethod` (`id`, `method_name`) VALUES
 (1, 'Credit Card'),
 (2, 'Debit Card'),
 (3, 'Cash'),
 (4, 'Cheque');
-
 */
 
 /*
