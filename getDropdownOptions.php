@@ -49,3 +49,18 @@ INSERT INTO `paymethod` (`id`, `method_name`) VALUES
 (4, 'Cheque');
 
 */
+
+/*
+ * Note that a better approach is to return data in JSON format, so step 3 would be:
+ *
+ * $options = array();
+ * while ( $row = mysqli_fetch_assoc($sqlResult) ) {
+ *     $option = array( 'id'=>$row['id'], 'name'=> $row['method_name']);
+ *     $options[] = $option;
+ * }
+ * $options = json_encode($options);   // to JSON-ize the array
+ *
+ * Using JSON is a better approach because it de-couples the data layer (this backend script)
+ * from the presentation layer (HTML in this case).
+ *
+ */

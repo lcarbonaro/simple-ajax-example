@@ -30,3 +30,20 @@ function doAjaxCall() {
 }
 
 
+/*
+ * A better approach using JSON would be (instead of the .innerHTML line):
+ * 
+ * var s = document.getElementById('mydropdown'); 
+ * var records = JSON.parse(xhr.responseText); // this converts JSON to object
+ * records.forEach( function(rec) { 
+ *     var o = document.createElement('option'); 
+ *     o.value = rec.id; 
+ *     o.innerHTML = rec.name;  *     
+ *     s.appendChild(o) 
+ * })
+ * 
+ * assuming returned responseText is JSON like: [{"id":1,"name":"Tom"},{"id":2,"name":"Dick"},{"id":3,"name":"Harriet"}]
+ *
+ * This is a better approach because it maximizes de-coupling between presentation layer and data layer.
+ * 
+ */
