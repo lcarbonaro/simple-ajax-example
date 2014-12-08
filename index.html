@@ -12,7 +12,38 @@ This is done via an AJAX call using plain vanilla Javascript.
         <div>
             <select id="mydropdown">
                 <!-- the option tags here will be added in on the fly at runtime -->
+                <!-- for example: <option id="1">Cash</option> -->
             </select>
         </div>
+        
+        <!-- "predictor input" example using new HTML5 input list attribute and datalist element -->
+        <!-- Anything more sophisticated than this would probably need a jQuery UI plug-in       -->
+        <br/>
+        <div>
+            <input list="flavours"/>
+            <datalist id="flavours">
+                <!-- Note that option tags for datalist are a little different than for select -->
+                <!-- for example: <option id="1" value="Apple" /> -->
+            </datalist>
+        </div>
+        <script>
+            /* This is just a quick and dirty hard-coded example */
+            var flavours = [
+                {"id":"1","value":"Apple"},
+                {"id":"2","value":"Apricot"},
+                {"id":"3","value":"Banana"},
+                {"id":"4","value":"Berry"},
+                {"id":"5","value":"Lemon"},
+                {"id":"6","value":"Orange"}
+            ];
+            var objDatalist = document.getElementById("flavours");
+            flavours.forEach( function(flavour) { 
+                var o = document.createElement('option'); 
+                o.setAttribute("id",flavour.id); 
+                o.setAttribute("value",flavour.value);    
+                objDatalist.appendChild(o); 
+            });            
+        </script>
+        
     </body>
 </html>
