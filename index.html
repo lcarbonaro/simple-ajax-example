@@ -20,7 +20,7 @@ This is done via an AJAX call using plain vanilla Javascript.
         <!-- Anything more sophisticated than this would probably need a jQuery UI plug-in       -->
         <br/>
         <div>
-            <input list="flavours"/>
+            <input id="myInput" list="flavours"/>
             <datalist id="flavours">
                 <!-- Note that option tags for datalist are a little different than for select -->
                 <!-- for example: <option id="1" value="Apple" /> -->
@@ -42,7 +42,12 @@ This is done via an AJAX call using plain vanilla Javascript.
                 o.setAttribute("id",flavour.id); 
                 o.setAttribute("value",flavour.value);    
                 objDatalist.appendChild(o); 
-            });            
+            });  
+            document.getElementById('myInput').addEventListener('change', onChangeInput);
+            function onChangeInput() {
+                console.log('input=' + this.value);
+                return false;
+            }
         </script>
         
     </body>
